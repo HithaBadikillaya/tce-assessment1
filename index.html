@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment1</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body style="background-color: beige;">
+    <div class="navbar">
+        <span  style="color: white; font-size: xx-large;">Cake-Couture</span>
+        <a href="index.html"> Home </a></li>
+         <a href="cart.html"> Cart </a>
+         <a href="gallery.html"> Photo-Gallery </a>
+         <a href="feedback.html"> Feedback </a>
+
+
+    </div>
+   
+    <div class="banner">
+        <img src="https://coolwallpapers.me/picsup/1174478-cake.jpg" width="400px" height="200px"/>
+        <span id="banner-desc"> Welcome to Cake Couture!</span>
+        <span id="banner-desc2">"Delight in Every Slice! 🍰 Discover our handcrafted cakes, made with love and the finest ingredients. From classic flavors to custom creations, we have the perfect treat for every occasion. Indulge your sweet tooth today!"</span>
+    </div>
+    <marquee style="background-color: rgb(111, 84, 47); margin-top: 20px; font-size: 25px; color: white; padding: 5px;"> Cakes . Sweets . Pasteries . Customized toppings . Syrups . Many more !!</marquee>
+<h2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 40px; "> About us <3</h2>
+<p style="font-size: 20px;">At Cake Couture, we believe that every occasion deserves a deliciously crafted cake. Founded by a passionate baker with a love for creativity, our shop specializes in handcrafted cakes made from the finest ingredients.
+
+    We take pride in our attention to detail and commitment to quality, ensuring that each cake is not only a treat for the taste buds but also a feast for the eyes. From classic flavors to custom designs, our cakes are perfect for birthdays, weddings, anniversaries, and any celebration in between. </p>
+    
+    <h2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 40px; "> Our best sellers ! </h2>
+
+    <section class="cake-cards">
+        <div class="cake-card">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.xRwHrHpM1CVeUpX2x-12EQHaE8&pid=Api&P=0&h=180" alt="Chocolate-Delight" width="200px" height="200px"/>
+            <h3>Chocolate Delight</h3>
+            <p>A rich and moist chocolate cake, layered with creamy chocolate frosting. Perfect for chocoholics!</p>
+            <p>100/-</p>
+            <div class="quantity">
+                <button onclick="changeQuantity(this, -1)">-</button>
+                <span class="quantity-count">1</span>
+                <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart('Chocolate Delight', 100, this)">Add to Cart</button>
+        </div>
+        <div class="cake-card">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.cicSqxItd-z1_nZ2G9C-bAHaHa&pid=Api&P=0&h=180" alt="Vanilla cake" width="200px" height="200px"/>
+            <h3>Vanilla Bliss</h3>
+            <p>Light and fluffy vanilla cake topped with luscious vanilla buttercream. A classic favorite!</p>
+            <p>150/-</p>
+            <div class="quantity">
+                <button onclick="changeQuantity(this, -1)">-</button>
+                <span class="quantity-count">1</span>
+                <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart('Vanilla Bliss', 150, this)">Add to Cart</button>
+        </div>
+
+        </div>
+        <div class="cake-card">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.CqDj65B3oiZFDaPdfg3KEQHaHa&pid=Api&P=0&h=180" alt="Red Velvet cake" width="200px" height="200px"/>
+            <h3>Red Velvet</h3>
+            <p>Deliciously soft red velvet cake with a hint of cocoa and a rich cream cheese frosting.</p>
+            <p>100/-</p>
+            <div class="quantity">
+                <button onclick="changeQuantity(this, -1)">-</button>
+                <span class="quantity-count">1</span>
+                <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart('Red Velvet', 100, this)">Add to Cart</button>
+        </div>
+        <div class="cake-card">
+            <img src="https://media.istockphoto.com/id/859674102/photo/lemon-tart.jpg?s=612x612&w=0&k=20&c=locvVng24dF-ETkCspmEO1fHmZCOAoJ5STgm00Fq3qE=" alt="Lemon Tart" width="200px" height="200px"/>
+            <h3>Lemon Tart</h3>
+            <p>Zesty lemon cake with a buttery crust, topped with a light lemon glaze. Refreshingly sweet!</p>
+            <p>200/-</p>
+            <div class="quantity">
+                <button onclick="changeQuantity(this, -1)">-</button>
+                <span class="quantity-count">1</span>
+                <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart('Lemon Tart', 200, this)">Add to Cart</button>
+        </div>
+    </section>
+    
+    <h2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 40px; "> Explore more </h2>
+
+    <section class="cake-cards">
+        <a href="birthday.html" class="cake-card" >
+            <h3>Birthday cakes</h3>
+        </a>
+        <a href="anniversary.html" class="cake-card" >
+            <h3>Anniversary treats</h3>
+        </a>
+        <a href="special.html" class="cake-card" >
+            <h3>Special event cakes</h3>
+        </a>
+        <a href="noreason.html" class="cake-card">
+            <h3>Cakes for no reason at all</h3>
+        </a>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Cake Couture. All rights reserved. contact : cakecouture@gmail.com </p>
+    </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+       
+        function changeQuantity(element, delta) {
+            const quantityElem = element.parentElement.querySelector('.quantity-count');
+            let currentQuantity = parseInt(quantityElem.innerText);
+            currentQuantity = Math.max(1, currentQuantity + delta); 
+            quantityElem.innerText = currentQuantity;
+        }
+
+       
+        function addToCart(cakeName, price, element) {
+            const cakeCard = element.closest('.cake-card');
+            const quantity = parseInt(cakeCard.querySelector('.quantity-count').innerText);
+
+            
+            const cakeInCart = cart.find(cake => cake.name === cakeName);
+            if (cakeInCart) {
+                cakeInCart.quantity += quantity;
+            } else {
+                const cake = {
+                    name: cakeName,
+                    price: price,
+                    quantity: quantity,
+                    image: cakeCard.querySelector('img').src
+                };
+                cart.push(cake);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Added to cart successfully!')
+        }
+</script>
+</body>
+</html>

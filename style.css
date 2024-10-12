@@ -1,0 +1,233 @@
+.navbar{
+
+    padding: 10px;
+    background-color: rgb(67, 64, 64);
+    word-spacing: 20px;
+    ;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.banner {
+    display: flex; 
+    align-items: center; 
+    border: 1px solid black;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: antiquewhite;
+}
+
+.banner img {
+    margin-right: 20px; 
+    border-radius: 50px;
+}
+
+#banner-desc {
+    margin: 20px;
+    font-size: 60px;
+    margin-bottom: 10px; 
+}
+
+#banner-desc2 {
+    font-size: large;
+    margin: 0; 
+    padding: 0; 
+}
+
+.cake-cards {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    margin: 20px 0; 
+}
+
+.cake-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    text-align: center;
+    width: 200px; 
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cake-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.cake-card h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.cake-card p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.cake-card button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #8B5A2B; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.cake-card button:hover {
+    background-color: #7a4c2a; 
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #8B5A2B; 
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.cake-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.cake-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    text-align: center;
+    width: 300px;
+    margin: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.cake-card h3 {
+    font-size: 1.5em;
+}
+
+* {box-sizing:border-box}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: large;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#thank-you-message {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#cart-items {
+    display: flex;           
+    flex-wrap: wrap;        
+    gap: 20px;              
+    justify-content: center;  
+}
+
+.cake-card {
+    border: 1px solid #ccc;  
+    padding: 10px;          
+    width: 200px;           
+    text-align: center;      
+}

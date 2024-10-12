@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Cake Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <span  style="color: white; font-size: xx-large;">Cake-Couture</span>
+        <a href="index.html"> Home </a></li>
+         <a href="cart.html"> Cart </a>
+         <a href="gallery.html"> Photo-Gallery </a>
+         <a href="feedback.html"> Feedback </a>
+    </div>
+
+    <section id="cart">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+    </section>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        
+        function updateCart() {
+            const cartItemsDiv = document.getElementById('cart-items');
+            cartItemsDiv.innerHTML = ''; 
+
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p>No items in the cart yet.</p>';
+            } else {
+                cart.forEach((cake, index) => {
+                    const cakeCard = document.createElement('div');
+                    cakeCard.className = 'cake-card';
+
+                    cakeCard.innerHTML = `
+                        <img src="${cake.image}" alt="${cake.name}">
+                        <h3>${cake.name}</h3>
+                        <p>$${cake.price}</p>
+                        <div class="quantity">
+                            <button onclick="changeQuantity(${index}, -1)">-</button>
+                            <span class="quantity-count">${cake.quantity}</span>
+                            <button onclick="changeQuantity(${index}, 1)">+</button>
+                        </div>
+                        <p>Total: $${cake.price * cake.quantity}</p>
+                        <button onclick="removeFromCart(${index})">Remove</button>
+                    `;
+
+                    cartItemsDiv.appendChild(cakeCard);
+                });
+            }
+        }
+
+       
+        function changeQuantity(index, delta) {
+            cart[index].quantity = Math.max(1, cart[index].quantity + delta); 
+            if (cart[index].quantity === 0) {
+                cart.splice(index, 1); 
+            }
+
+           
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCart();
+        }
+
+        
+        function removeFromCart(index) {
+            cart.splice(index, 1); 
+
+           
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCart();
+        }
+
+        
+        window.onload = function() {
+            updateCart();
+        }
+    </script>
+
+<footer>
+    <p>&copy; 2024 Cake Couture. All rights reserved. contact : cakecouture@gmail.com</p>
+</footer>
+</body>
+</html>

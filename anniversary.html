@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <span style="color: white; font-size: xx-large;">Cake-Couture</span>
+        <a href="index.html"> Home </a></li>
+         <a href="cart.html"> Cart </a>
+         <a href="gallery.html"> Photo-Gallery </a>
+         <a href="feedback.html"> Feedback </a>
+
+
+    </div>
+    <h1 style="text-align: center;"> Made with love (for your love)</h1>
+
+    <section class="cake-cards">
+        <div class="cake-card">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.zHQl21XrcZo4NoGV3weUngHaHa&pid=Api&P=0&h=180" alt="rose cake" width="200px" height="200px"/>
+            <h3>Rose creme</h3>
+            <p>This exquisite cake features layers of soft, fluffy vanilla sponge infused with delicate rose essence</p>
+            <p>100/-</p>
+            <div class="quantity">
+                <button onclick="changeQuantity(this, -1)">-</button>
+                <span class="quantity-count">1</span>
+                <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart('Rose creme', 100, this)">Add to Cart</button>
+        </div>
+        <div class="cake-card">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.IZDxOnro839_Wq4qu2fO8wHaHa&pid=Api&P=0&h=180" alt="Vanilla cake" width="200px" height="200px"/>
+            <h3>Vanilla Delight</h3>
+            <p>Light and fluffy vanilla cake topped with luscious vanilla buttercream. A classic favorite!</p>
+            <p>150/-</p>
+            <div class="quantity">
+                <button onclick="changeQuantity(this, -1)">-</button>
+                <span class="quantity-count">1</span>
+                <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart('Vanilla Delight', 150, this)">Add to Cart</button>
+        </div>
+        <div class="cake-card">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.f0qozVETZUiKAtjoB3Jz_QHaHa&pid=Api&P=0&h=180" alt="Berry cake" width="200px" height="200px"/>
+            <h3>Berry Blast</h3>
+            <p>This cake is not just a treat for the taste buds but a feast for the eyes. Ideal for weddings, anniversaries</p>
+            <p>100/-</p>
+            <div class="quantity">
+                <button onclick="changeQuantity(this, -1)">-</button>
+                <span class="quantity-count">1</span>
+                <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart('Berry Blast', 100, this)">Add to Cart</button>
+        </div>
+        <div class="cake-card">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.1WX4Hx1FKJ4wqJUnG-gwBgHaFj&pid=Api&P=0&h=180" alt="Lemon cake" width="200px" height="200px"/>
+            <h3>Lemon Raspberry</h3>
+            <p>This refreshing dessert features layers of zesty lemon cake, perfectly complemented by a vibrant raspberry filling.</p>
+            <p>200/-</p>
+            <div class="quantity">
+                <button onclick="changeQuantity(this, -1)">-</button>
+                <span class="quantity-count">1</span>
+                <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart('Lemon Raspberry', 200, this)">Add to Cart</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Cake Couture. All rights reserved. contact : cakecouture@gmail.com</p>
+    </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+       
+        function changeQuantity(element, delta) {
+            const quantityElem = element.parentElement.querySelector('.quantity-count');
+            let currentQuantity = parseInt(quantityElem.innerText);
+            currentQuantity = Math.max(1, currentQuantity + delta); 
+            quantityElem.innerText = currentQuantity;
+        }
+
+       
+        function addToCart(cakeName, price, element) {
+            const cakeCard = element.closest('.cake-card');
+            const quantity = parseInt(cakeCard.querySelector('.quantity-count').innerText);
+
+            
+            const cakeInCart = cart.find(cake => cake.name === cakeName);
+            if (cakeInCart) {
+                cakeInCart.quantity += quantity;
+            } else {
+                const cake = {
+                    name: cakeName,
+                    price: price,
+                    quantity: quantity,
+                    image: cakeCard.querySelector('img').src
+                };
+                cart.push(cake);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Added to cart successfully!')
+
+        }
+</script>
+</body>
+</html>

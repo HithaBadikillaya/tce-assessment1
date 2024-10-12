@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <span style="color: white; font-size: xx-large;">Cake-Couture</span>
+        <a href="index.html"> Home </a></li>
+         <a href="cart.html"> Cart </a>
+         <a href="gallery.html"> Photo-Gallery </a>
+         <a href="feedback.html"> Feedback </a>
+
+    </div>
+    <h1 style="text-align: center;"> Cake? Why not</h1>
+
+    <section class="cake-cards">
+        <div class="cake-card">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.28OkuVM9EiZdBCRRFb9YkgHaHa&pid=Api&P=0&h=180" alt="Pista cake" width="200px" height="200px"/>
+            <h3>Pista Delight</h3>
+            <p>Topped with a velvety pistachio cream frosting and garnished with chopped pistachios, this cake is both beautiful and delicious</p>
+            <p>100/-</p>
+            <div class="quantity">
+                <button onclick="changeQuantity(this, -1)">-</button>
+                <span class="quantity-count">1</span>
+                <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart('Pista Delight', 100, this)">Add to Cart</button>
+        </div>
+        <div class="cake-card">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.vVjK9ZtllpQVZhQTiwKgDgHaEK&pid=Api&P=0&h=180" alt="orange cake" width="200px" height="200px"/>
+            <h3>Fruity orange</h3>
+            <p>This delightful dessert features a light and fluffy orange-infused sponge, bursting with zesty citrus flavor</p>
+            <p>150/-</p>
+            <div class="quantity">
+                <button onclick="changeQuantity(this, -1)">-</button>
+                <span class="quantity-count">1</span>
+                <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart('Fruity orange', 150, this)">Add to Cart</button>
+        </div>
+        <div class="cake-card">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.xSvy4IsyPnybkzsmWtwkxwHaFj&pid=Api&P=0&h=180" alt="Strawberry cake" width="200px" height="200px"/>
+            <h3>Strawberry Butterscotch</h3>
+            <p>Topped with a generous layer of whipped cream and adorned with vibrant strawberry slices, each bite is a perfect blend of freshness and sweetness</p>
+            <p>100/-</p>
+            <div class="quantity">
+                <button onclick="changeQuantity(this, -1)">-</button>
+                <span class="quantity-count">1</span>
+                <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart('Strawberry Butterscotch', 100, this)">Add to Cart</button>
+        </div>
+        <div class="cake-card">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.cij5cv9lbUifg3HJrcGCXAHaEo&pid=Api&P=0&h=180" alt="cupcakes" width="200px" height="200px"/>
+            <h3> Tea infused cupcakes</h3>
+            <p>Delight in the whimsical charm of our Purple Cupcakes! These enchanting treats feature moist vanilla or chocolate cupcakes</p>
+            <p>200/-</p>
+            <div class="quantity">
+                <button onclick="changeQuantity(this, -1)">-</button>
+                <span class="quantity-count">1</span>
+                <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart('Tea infused cupcakes ', 200, this)">Add to Cart</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Cake Couture. All rights reserved. contact : cakecouture@gmail.com</p>
+    </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+       
+        function changeQuantity(element, delta) {
+            const quantityElem = element.parentElement.querySelector('.quantity-count');
+            let currentQuantity = parseInt(quantityElem.innerText);
+            currentQuantity = Math.max(1, currentQuantity + delta); 
+            quantityElem.innerText = currentQuantity;
+        }
+
+       
+        function addToCart(cakeName, price, element) {
+            const cakeCard = element.closest('.cake-card');
+            const quantity = parseInt(cakeCard.querySelector('.quantity-count').innerText);
+
+            
+            const cakeInCart = cart.find(cake => cake.name === cakeName);
+            if (cakeInCart) {
+                cakeInCart.quantity += quantity;
+            } else {
+                const cake = {
+                    name: cakeName,
+                    price: price,
+                    quantity: quantity,
+                    image: cakeCard.querySelector('img').src
+                };
+                cart.push(cake);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Added to cart successfully!')
+
+        }
+</script>
+</body>
+</html>

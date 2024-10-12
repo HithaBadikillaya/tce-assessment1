@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <span style="color: white; font-size: xx-large;">Cake-Couture</span>
+        <a href="index.html"> Home </a></li>
+         <a href="cart.html"> Cart </a>
+         <a href="gallery.html"> Photo-Gallery </a>
+         <a href="feedback.html"> Feedback </a>
+
+
+    </div>
+
+<div class="slideshow-container">
+
+    <h1 style="text-align: center;"> Our most cherished custom creations </h1>
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="https://tse3.mm.bing.net/th?id=OIP.UgI-1EGmsJKsl56nf3zX_QHaEK&pid=Api&P=0&h=180" width="100%">
+      <div class="text">Caption Text</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="https://tse2.mm.bing.net/th?id=OIP.aLKch45ssmwc0FQkn_WQMQHaEK&pid=Api&P=0&h=180" width="100%">
+      <div class="text">Caption Two</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="https://tse4.mm.bing.net/th?id=OIP.tpNZSAaxJv-_ZGQ4OMfHPwHaEK&pid=Api&P=0&h=180" width="100%">
+      <div class="text">Caption Three</div>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 6</div>
+        <img src="https://tse2.mm.bing.net/th?id=OIP.gOh7ZO_ehpodRWbR7XjSYgHaEK&pid=Api&P=0&h=180" width="100%">
+        <div class="text">Caption Four</div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">5 / 6</div>
+        <img src="https://tse2.mm.bing.net/th?id=OIP.iuflhDx9yzdjnED93376lwHaEK&pid=Api&P=0&h=180" width="100%">
+        <div class="text">Caption Five</div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">6 / 6</div>
+        <img src="https://tse2.mm.bing.net/th?id=OIP.gOh7ZO_ehpodRWbR7XjSYgHaEK&pid=Api&P=0&h=180" width="100%">
+        <div class="text">Caption Six</div>
+      </div>
+  
+    
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+ 
+
+<script>
+    let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000);
+}
+</script>
+
+<footer>
+    <p>&copy; 2024 Cake Couture. All rights reserved. contact : cakecouture@gmail.com</p>
+</footer>
+</body>
+</html>
